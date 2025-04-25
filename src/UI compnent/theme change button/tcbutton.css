@@ -1,0 +1,16 @@
+.tcbutton {
+    font-size: 30px;
+    padding: 5px;
+    transition: color 0.4s ease;
+}
+
+.tcbutton:hover {
+    color: #00BFFF;
+}
+
+@media (max-width: 768px) {
+    .tcbutton {
+        font-size: 13px;
+    }
+}
+
