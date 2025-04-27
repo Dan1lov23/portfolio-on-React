@@ -1,0 +1,41 @@
+.contactsMain {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contactsMainContent {
+    display: grid;
+    grid-template-columns: repeat(4, 180px);
+    margin-top: 100px;
+    .contactsItem {
+        font-size: 126px;
+    }
+    .contactsItem a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contactsItem a:hover {
+        color:#00BFFF;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactsMainContent {
+        display: grid;
+        grid-template-columns: repeat(2, 160px);
+        margin-top: 20px;
+        .contactsItem {
+            margin-top: 40px;
+            font-size: 86px;
+            color: white;
+            transition: color 0.4s ease;
+        }
+        .contactsItem:hover {
+            color: #00BFFF;
+        }
+    }
+}
+
