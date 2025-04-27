@@ -1,6 +1,7 @@
 import './header.css';
 
-import TCButton from '../theme change button/TCButton.tsx'
+import MusicButton from '../theme change button/MusicButton.tsx';
+import TransButton from "../translation button/TransButton.tsx";
 
 import {Link} from "react-router-dom";
 
@@ -16,20 +17,30 @@ export default function Header() {
                 </div>
                 <ul>
                     <li>
-                        <Link to="*">
+                        <Link to="/*">
                             about me
                         </Link>
                     </li>
                     <li>
-                        <Link to="/technologies">
-                            technologies
+                        <Link to="/skills">
+                            skills
                         </Link>
                     </li>
                     <li>
-                        contacts
+                        <Link to="/projects">
+                            projects
+                        </Link>
                     </li>
                     <li>
-                        <TCButton/>
+                        <Link to="/contacts">
+                            contacts
+                        </Link>
+                    </li>
+                    <li>
+                        <TransButton/>
+                    </li>
+                    <li>
+                        <MusicButton/>
                     </li>
                 </ul>
             </div>
