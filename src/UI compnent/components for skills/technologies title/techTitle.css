@@ -1,0 +1,34 @@
+.text-gradient {
+    background: linear-gradient(270deg, #00BFFF, #ADD8E6, #00BFFF, #4B0082, #FF00FF);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 5s ease infinite;
+}
+
+.techTitle {
+    margin-top: 100px;
+    margin-left: 100px;
+    h1 {
+        font-size: 122px;
+    }
+    h2 {
+        margin-top: -50px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .techTitle {
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+        h1 {
+            font-size: 62px;
+        }
+        h2 {
+            margin-top: -10px;
+            font-size: 12px;
+        }
+    }
+}

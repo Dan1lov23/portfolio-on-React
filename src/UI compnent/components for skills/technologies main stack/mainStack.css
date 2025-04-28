@@ -1,0 +1,21 @@
+.mainStackImg {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    img {
+        width: 80px;
+        height: 80px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainStackImg {
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        img {
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+        }
+    }
+}
