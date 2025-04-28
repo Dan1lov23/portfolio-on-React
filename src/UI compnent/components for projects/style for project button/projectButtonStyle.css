@@ -1,0 +1,15 @@
+.projectButtonMain {
+    button {
+        background-color: #00BFFF;
+        border: none;
+        border-radius: 7px;
+        color: white;
+        width: 260px;
+        height: 55px;
+        font-size: 25px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    button:hover {
+        transform: scale(1.1);
+    }
+}

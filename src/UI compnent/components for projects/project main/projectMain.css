@@ -1,0 +1,24 @@
+.projectMain {
+    text-align: center;
+}
+
+.projectsImg {
+    img {
+        width: 720px;
+        height: 740px;
+        border-radius: 3%;
+    }
+}
+
+.projectTitle {
+    text-align: center;
+    color: white;
+    font-size: 42px;
+}
+
+.projectsButtons {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 322px);
+    margin-top: 6%;
+}
