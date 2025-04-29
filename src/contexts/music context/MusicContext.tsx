@@ -1,16 +1,31 @@
-import { createContext, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useRef, useState, ReactNode } from 'react';
+import audioFile from '../../music/paganini-la-campanella.-rondo.mp3'; // Импортируем аудиофайл
 
-const MusicContext = createContext(null);
+interface MusicContextType {
+    isPlaying: boolean;
+    playMusic: () => void;
+    pauseMusic: () => void;
+}
 
-export const MusicProvider = ({ children }) => {
+const MusicContext = createContext<MusicContextType | null>(null);
+
+interface MusicProviderProps {
+    children: ReactNode;
+}
+
+export const MusicProvider = ({ children }: MusicProviderProps) => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const playMusic = () => {
+    const playMusic = async () => {
         if (audioRef.current) {
-            audioRef.current.currentTime = 0;
-            audioRef.current.play();
-            setIsPlaying(true);
+            try {
+                audioRef.current.currentTime = 0; // Сбрасываем время
+                await audioRef.current.play();
+                setIsPlaying(true);
+            } catch (error) {
+                console.error("Ошибка воспроизведения:", error);
+            }
         }
     };
 
@@ -24,11 +39,17 @@ export const MusicProvider = ({ children }) => {
     return (
         <MusicContext.Provider value={{ isPlaying, playMusic, pauseMusic }}>
             {children}
-            <audio ref={audioRef} src="../src/music/paganini-la-campanella.-rondo.mp3" />
+            <audio ref={audioRef} src={audioFile} />
         </MusicContext.Provider>
     );
 };
 
 export const useMusic = () => {
-    return useContext(MusicContext);
+    const context = useContext(MusicContext);
+
+    if (!context) {
+        throw new Error('useMusic must be used within a MusicProvider');
+    }
+
+    return context;
 };
