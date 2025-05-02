@@ -1,0 +1,15 @@
+.categoryTitleMain {
+    h1 {
+        text-align: center;
+        font-size: 63px;
+        color: #00BFFF;
+    }
+}
+
+@media(max-width: 768px) {
+    .categoryTitleMain {
+        h1 {
+            font-size: 28px;
+        }
+    }
+}
