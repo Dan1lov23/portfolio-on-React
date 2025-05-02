@@ -5,20 +5,47 @@
 .projectsImg {
     img {
         width: 720px;
-        height: 740px;
+        height: 440px;
         border-radius: 3%;
+        border: 1px solid white;
     }
 }
 
 .projectTitle {
     text-align: center;
-    color: white;
-    font-size: 42px;
+    h1 {
+        color: white;
+        font-size: 82px;
+    }
 }
 
 .projectsButtons {
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(2, 322px);
-    margin-top: 6%;
+    margin-top: 3%;
+}
+
+
+@media(max-width: 768px) {
+    .projectTitle {
+        text-align: center;
+        h1 {
+            font-size: 42px;
+        }
+    }
+    .projectsImg {
+        img {
+            width: 380px;
+            height: 320px;
+            border-radius: 3%;
+        }
+    }
+    .projectsButtons {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 182px);
+        margin-top: 6%;
+    }
+
 }
